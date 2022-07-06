@@ -1,13 +1,15 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
+
 require('dotenv').config()
-
-
 const routers = require('./routers');
 const errorHandler = require('./middlewares/error-handler');
 
 
 
+app.use(cors())
 // parse requests of content-type - application/json
 app.use(express.json());
 

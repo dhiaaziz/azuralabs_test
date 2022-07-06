@@ -17,11 +17,14 @@ const sort = (arrOfObj) => {
 }
 
 const main = async () => {
-    const dataJson = await toJsonArray(csvFilePath, configcsvtojson);
-    console.table(dataJson);
-    const sortedData = sort(dataJson);
-    console.table(sortedData);
-
+    try {
+        const dataJson = await toJsonArray(csvFilePath, configcsvtojson);
+        console.table(dataJson);
+        const sortedData = sort(dataJson);
+        console.table(sortedData);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 

@@ -2,9 +2,11 @@
 const Product = require('../models').product;
 const ApiError = require('../helpers/api-error');
 const validator = require('../helpers/validator');
+// const { Op } = require('sequelize');
 
 const index = async (req, res, next) => {
     try {
+        // return res.send(Op.and())
         const data = await Product.findAll({});
         res.status(200).json({
             success: true,
